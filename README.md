@@ -26,7 +26,7 @@ Audited is currently ActiveRecord-only. In a previous life, Audited worked with 
 Add the gem to your Gemfile:
 
 ```ruby
-gem "audited", "~> 4.0"
+gem "audited", "~> 4.3"
 ```
 
 Then, from your Rails app directory, create the `audits` table:
