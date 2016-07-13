@@ -14,6 +14,15 @@ module Audited
     def before_create(audit)
       audit.user ||= current_user
       audit.remote_address = controller.try(:request).try(:ip)
+      if !current_user.blank?
+        audit.company_id = current_user.company_id 
+        audit.user_role = current_user.role
+        audit.username = current_user.email 
+      else
+        audit.company_id = audit.user.company_id 
+        audit.user_role = audit.user.role
+        audit.username = audit.user.email 
+      end
     end
 
     def current_user
