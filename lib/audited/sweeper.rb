@@ -18,7 +18,7 @@ module Audited
         audit.company_id = current_user.company_id 
         audit.user_role = current_user.role
         audit.username = current_user.email 
-      else
+      elsif !audit.user.nil?
         audit.company_id = audit.user.company_id 
         audit.user_role = audit.user.role
         audit.username = audit.user.email 
